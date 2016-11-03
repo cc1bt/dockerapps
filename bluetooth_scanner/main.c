@@ -142,8 +142,8 @@ int main(){
 		}
 
 		//parameters required to send to Node-RED
-		char *hostname = "10.255.21.45";
-		char *page = "/bluetoothscanner";
+		char *hostname = "localhost";
+		char *page = "/found_devices";
 		int port = 1880;
 
 		//check if the flag is true (there is something to send)
@@ -229,7 +229,7 @@ int main(){
 		memset(&jsonNames[0], 0, sizeof(jsonNames));
 
 		//send to Node-RED
-		page = "/processedDevices";
+		page = "/all_found_devices";
 		createHTTP(hostname, page, jsonAddresses, port);
 
 		memset(&jsonAddresses[0], 0, sizeof(jsonAddresses));
